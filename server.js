@@ -21,7 +21,8 @@ app.get("/About",middleware.requireAuthentication,function (req,res){
 });
 
 app.use(express.static(__dirname + "/public"));
-var port = 3000
+
+var port = process.env.PORT || 3000;
 app.listen(port, function (){
 	console.log("Express server started on " + port);
 });
